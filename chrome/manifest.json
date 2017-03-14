@@ -4,10 +4,12 @@
   "description": "A test for webrequest",
   "manifest_version": 2,
   "permissions": [
-    "https://www.google.com/*","webRequest","webRequestBlocking"
+    "https://www.google.com/*",
+    "https://www.gstatic.com/*",
+    "webRequest","webRequestBlocking"
   ],
   "background": {
-    "scripts": ["bundle.js","main.js"],
+    "scripts": ["main.js"],
     "persistent": true
   }
 }

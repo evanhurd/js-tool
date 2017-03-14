@@ -17710,7 +17710,7 @@ function Tool(arg) {
     };
 }
 
-function tool(stringyCode) {
+module.exports = function(stringyCode) {
     var ast = esprima.parse(stringyCode);
     //VariableDeclarations(ast, Tool);
     AssignmentExpression(ast, Tool);
@@ -17719,11 +17719,7 @@ function tool(stringyCode) {
     return escodegen.generate(ast);
 }
 
-try {
-    chrome.astRun = tool;
-}catch(err){
-    module.exports = tool;
-}
+
 
 },{"./toolings/assignment-expression":42,"./toolings/function-argument":43,"./toolings/return-statement":44,"./toolings/variable-declarations":46,"ast-types":20,"escodegen":21,"esprima":23}],42:[function(require,module,exports){
 var n = require("ast-types").namedTypes;

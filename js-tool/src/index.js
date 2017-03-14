@@ -36,8 +36,4 @@ function tool(stringyCode) {
     return escodegen.generate(ast);
 }
 
-try {
-    chrome.astRun = tool;
-}catch(err){
-    module.exports = tool;
-}
+module.exports = tool;
